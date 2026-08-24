@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ocean Explorer | Arnavi Roy</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;background:#031522;color:#effcff;overflow-x:hidden}
+nav{position:fixed;top:0;width:100%;z-index:10;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;background:#031522dd;backdrop-filter:blur(12px);border-bottom:1px solid #17465b}
+.logo{font-weight:800;letter-spacing:1px}.logo span,.cyan{color:#55dfff}.nav{display:flex;gap:18px}.nav a{color:#b9dce8;text-decoration:none;font-size:13px}
+.hero{min-height:100vh;padding:150px 8% 80px;display:flex;align-items:center;background:radial-gradient(circle at 80% 30%,#08749a55,transparent 30%),linear-gradient(145deg,#02121d,#063b56,#021522)}
+.hero h1{font-size:clamp(55px,10vw,120px);line-height:.85;letter-spacing:-5px;text-transform:uppercase}.tag{color:#55dfff;letter-spacing:4px;font-size:12px;font-weight:bold;margin-bottom:25px}
+.hero p{max-width:650px;color:#a9cbd7;font-size:18px;line-height:1.7;margin:35px 0}
+.btn{display:inline-block;padding:14px 22px;border-radius:30px;background:#55dfff;color:#031522;text-decoration:none;font-weight:800;border:0;cursor:pointer}
+section{padding:110px 8%;min-height:80vh}.dark{background:#031522}.darker{background:#020d15}
+h2{font-size:clamp(45px,8vw,80px);line-height:.95;margin-bottom:25px}.intro{max-width:650px;color:#91afbb;line-height:1.7;margin-bottom:45px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card,.zone,.quiz,.fact{padding:30px;border:1px solid #1c5065;background:linear-gradient(145deg,#0a3549cc,#041d2acc);border-radius:22px;transition:.3s}
+.card:hover,.zone:hover{transform:translateY(-7px);border-color:#55dfff}.emoji{font-size:55px;margin-bottom:18px}.num{color:#55dfff;font-size:12px}
+.card h3,.zone h3{font-size:25px;margin:10px 0}.card p,.zone p{color:#91afbb;line-height:1.6;font-size:14px}
+.card button{margin-top:20px;padding:11px 18px;border-radius:25px;border:1px solid #55dfff;background:transparent;color:#55dfff;cursor:pointer}
+.zone-list{max-width:950px;display:grid;gap:15px}.zone{display:grid;grid-template-columns:70px 1fr}.depth{color:#55dfff!important;font-weight:bold;font-size:11px!important;letter-spacing:2px}
+.quiz{max-width:800px}.quiztop{display:flex;justify-content:space-between;color:#55dfff;font-size:12px;font-weight:bold;margin-bottom:25px}
+#answers{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:25px 0}#answers button{padding:15px;text-align:left;border-radius:12px;border:1px solid #1c5065;background:#082c3d;color:#dff7ff;cursor:pointer}
+#answers button:hover{border-color:#55dfff}.feedback{min-height:30px;color:#55dfff;margin:15px 0;font-weight:bold}
+.fact{text-align:center;max-width:850px;margin:auto;padding:55px}.fact p{font-size:25px;line-height:1.5;color:#dff8ff;margin:20px 0 30px}
+.protect{text-align:center;background:radial-gradient(circle,#075474,#010b12 65%)}.protect p{max-width:700px;margin:0 auto 30px;color:#a6c5d0;line-height:1.8}
+footer{text-align:center;padding:45px;background:#01080d;color:#66828d}
+.modal{position:fixed;inset:0;background:#001018dd;display:flex;align-items:center;justify-content:center;padding:25px;z-index:99}.modalbox{max-width:600px;background:#06283a;border:1px solid #55dfff;border-radius:25px;padding:35px;position:relative}.close{position:absolute;right:18px;top:12px;background:none;border:0;color:#fff;font-size:30px;cursor:pointer}.modalbox p{color:#b8d4de;line-height:1.8;margin:20px 0}
+@media(max-width:700px){nav{align-items:flex-start;flex-direction:column;gap:12px}.nav{overflow:auto;width:100%;gap:15px}.hero{padding-top:150px}.grid{grid-template-columns:1fr}.zone{grid-template-columns:45px 1fr}#answers{grid-template-columns:1fr}section{padding:90px 6%}}
+</style>
+</head>
+<body>
+<nav><div class="logo">🌊 OCEAN<span> EXPLORER</span></div><div class="nav"><a href="#home">Home</a><a href="#animals">Life</a><a href="#zones">Zones</a><a href="#quiz">Quiz</a><a href="#facts">Facts</a></div></nav>
+
+<section class="hero" id="home"><div><div class="tag">ARNAVI ROY • OCEAN EXPLORER</div><h1>Discover<br><span class="cyan">The Ocean.</span></h1><p>Dive beneath the surface and discover extraordinary marine life, mysterious underwater zones and fascinating secrets of our blue planet.</p><a class="btn" href="#animals">EXPLORE NOW ↓</a></div></section>
+
+<section id="animals" class="dark"><div class="tag">01 / MARINE LIFE</div><h2>Meet the <span class="cyan">Explorers.</span></h2><p class="intro">From the largest creature on Earth to tiny drifting animals, the ocean is packed with life.</p><div class="grid">
+<div class="card"><div class="num">01</div><div class="emoji">🐋</div><h3>Blue Whale</h3><p>The largest known animal on Earth, feeding mainly on tiny krill.</p><button onclick="showAnimal('Blue Whale','🐋','Blue whales are the largest known animals on Earth and mainly feed on tiny krill.')">LEARN MORE →</button></div>
+<div class="card"><div class="num">02</div><div class="emoji">🦈</div><h3>Great White Shark</h3><p>A powerful predator with extraordinary senses.</p><button onclick="showAnimal('Great White Shark','🦈','Great white sharks are powerful ocean predators with an excellent sense of smell.')">LEARN MORE →</button></div>
+<div class="card"><div class="num">03</div><div class="emoji">🐬</div><h3>Dolphin</h3><p>Intelligent marine mammals famous for communication.</p><button onclick="showAnimal('Dolphin','🐬','Dolphins are intelligent marine mammals that communicate using clicks and whistles.')">LEARN MORE →</button></div>
+<div class="card"><div class="num">04</div><div class="emoji">🐙</div><h3>Octopus</h3><p>Clever underwater problem-solvers with amazing adaptations.</p><button onclick="showAnimal('Octopus','🐙','Octopuses have three hearts, eight arms and can change colour and texture.')">LEARN MORE →</button></div>
+<div class="card"><div class="num">05</div><div class="emoji">🐢</div><h3>Sea Turtle</h3><p>Ancient marine reptiles capable of enormous migrations.</p><button onclick="showAnimal('Sea Turtle','🐢','Sea turtles are ancient marine reptiles and some travel thousands of kilometres.')">LEARN MORE →</button></div>
+<div class="card"><div class="num">06</div><div class="emoji">🪼</div><h3>Jellyfish</h3><p>Ancient drifting creatures that have survived for millions of years.</p><button onclick="showAnimal('Jellyfish','🪼','Jellyfish have existed for hundreds of millions of years and have no bones, brain or heart.')">LEARN MORE →</button></div>
+</div></section>
+
+<section id="zones" class="darker"><div class="tag">02 / THE DEEP</div><h2>Three Worlds<br><span class="cyan">Below.</span></h2><p class="intro">As we descend, sunlight disappears and the ocean becomes a completely different world.</p><div class="zone-list">
+<div class="zone"><div class="num">01</div><div><h3>Sunlight Zone</h3><p class="depth">0–200 METRES</p><p>The brightest part of the ocean, where sunlight supports plants and marine life.</p></div></div>
+<div class="zone"><div class="num">02</div><div><h3>Twilight Zone</h3><p class="depth">200–1,000 METRES</p><p>Only a small amount of light reaches this mysterious region.</p></div></div>
+<div class="zone"><div class="num">03</div><div><h3>Midnight Zone</h3><p class="depth">1,000–4,000 METRES</p><p>Almost completely dark, cold and under enormous pressure.</p></div></div>
+</div></section>
+
+<section id="quiz" class="dark"><div class="tag">03 / CHALLENGE</div><h2>How deep is<br><span class="cyan">your knowledge?</span></h2><p class="intro">Five questions. One ocean. Let's see what you know.</p><div class="quiz"><div class="quiztop"><span id="qnum">QUESTION 1 / 5</span><span id="score">SCORE: 0</span></div><h3 id="question"></h3><div id="answers"></div><div class="feedback" id="feedback"></div><button class="btn" id="next" style="display:none" onclick="nextQuestion()">NEXT QUESTION →</button></div></section>
+
+<section id="facts" class="darker"><div class="tag" style="text-align:center">04 / DID YOU KNOW?</div><h2 style="text-align:center">Ocean <span class="cyan">Secrets.</span></h2><div class="fact"><div class="emoji">🌊</div><p id="fact">The ocean covers more than 70% of Earth's surface.</p><button class="btn" onclick="newFact()">ANOTHER FACT ✦</button></div></section>
+
+<section class="protect"><div class="tag">05 / OUR BLUE PLANET</div><h2>Explore it.<br><span>Protect it.</span></h2><p>The ocean is one of Earth's greatest treasures. Learning about it helps us understand why protecting marine life and keeping our oceans clean matters.</p><a class="btn" href="#home">↑ BACK TO SURFACE</a></section>
+<footer><div class="logo">🌊 OCEAN<span> EXPLORER</span></div><p>ARNAVI ROY • EXPLORE • DISCOVER • PROTECT</p></footer>
+
+<script>
+function showAnimal(title,icon,text){const m=document.createElement('div');m.className='modal';m.innerHTML='<div class="modalbox"><button class="close" onclick="this.parentElement.parentElement.remove()">×</button><div class="emoji">'+icon+'</div><div class="tag">OCEAN EXPLORER</div><h2>'+title+'</h2><p>'+text+'</p><button class="btn" onclick="this.parentElement.parentElement.remove()">CLOSE</button></div>';document.body.appendChild(m)}
+const facts=['🌊 More than 70% of Earth’s surface is covered by ocean.','🐋 Blue whales are the largest known animals on Earth.','🐙 Octopuses have three hearts.','🦈 Sharks existed before dinosaurs.','🐢 Some sea turtles travel thousands of kilometres.','🌌 Much of the deep ocean remains unexplored.','🪼 Jellyfish have existed for hundreds of millions of years.','🐬 Dolphins communicate using clicks and whistles.'];
+function newFact(){document.getElementById('fact').textContent=facts[Math.floor(Math.random()*facts.length)]}
+const questions=[['Which is the largest known animal on Earth?',['Blue Whale','Great White Shark','Giant Squid','Dolphin'],0],['Which animal has three hearts?',['Sea Turtle','Octopus','Dolphin','Jellyfish'],1],['Which zone receives the most sunlight?',['Midnight Zone','Twilight Zone','Sunlight Zone','Abyss'],2],['Which of these is a marine mammal?',['Shark','Dolphin','Jellyfish','Octopus'],1],['What do blue whales mainly eat?',['Krill','Sea turtles','Large fish','Crabs'],0]];
+let qi=0,sc=0,answered=false;
+function loadQuestion(){answered=false;const q=questions[qi];document.getElementById('question').textContent=q[0];document.getElementById('qnum').textContent='QUESTION '+(qi+1)+' / '+questions.length;document.getElementById('score').textContent='SCORE: '+sc;document.getElementById('feedback').textContent='';document.getElementById('next').style.display='none';const box=document.getElementById('answers');box.innerHTML='';q[1].forEach((a,i)=>{const b=document.createElement('button');b.textContent=a;b.onclick=()=>answer(i,b);box.appendChild(b)})}
+function answer(i,b){if(answered)return;answered=true;const q=questions[qi];document.querySelectorAll('#answers button').forEach(x=>x.disabled=true);if(i===q[2]){sc++;b.style.borderColor='#55ffc9';b.style.color='#55ffc9';document.getElementById('feedback').textContent='✓ Correct! Excellent exploring.'}else{b.style.borderColor='#ff6478';b.style.color='#ff8b9a';document.getElementById('feedback').textContent='Not quite! Keep exploring. 🌊'}document.getElementById('score').textContent='SCORE: '+sc;document.getElementById('next').style.display='inline-block'}
+function nextQuestion(){qi++;if(qi>=questions.length){document.getElementById('qnum').textContent='MISSION COMPLETE';document.getElementById('question').textContent='🌊 You explored the quiz!';document.getElementById('answers').innerHTML='';document.getElementById('feedback').textContent='You scored '+sc+' / '+questions.length+'!';const n=document.getElementById('next');n.textContent='PLAY AGAIN';n.onclick=restart;return}loadQuestion()}
+function restart(){qi=0;sc=0;const n=document.getElementById('next');n.textContent='NEXT QUESTION →';n.onclick=nextQuestion;loadQuestion()}
+loadQuestion();
+</script>
+</body>
+</html>
